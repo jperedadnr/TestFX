@@ -21,6 +21,7 @@ ext.pomName = 'TestFX Spock'
 ext.pomDescription = 'TestFX Spock library'
 ext.moduleName = 'org.testfx.spock'
 ext.openjfxVersion = '17.0.10'
+ext.headlessSDKPath= "${System.properties['user.home']}${File.separator}Downloads${File.separator}javafx-sdk-23"
 
 apply plugin: 'groovy'
 //apply plugin: 'codenarc'
@@ -64,6 +65,7 @@ artifacts {
 }
 
 javafx {
+    sdk = headlessSDKPath
     version = openjfxVersion
     modules = [ 'javafx.controls' ]
 }
