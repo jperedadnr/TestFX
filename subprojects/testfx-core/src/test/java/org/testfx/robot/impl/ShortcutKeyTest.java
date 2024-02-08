@@ -156,7 +156,7 @@ public class ShortcutKeyTest extends FxRobot {
         robotContext().getTypeRobot().push(new KeyCodeCombination(KeyCode.A, KeyCombination.SHORTCUT_DOWN));
         robotContext().getTypeRobot().push(new KeyCodeCombination(KeyCode.C, KeyCombination.SHORTCUT_DOWN));
         clickOn(field2, MouseButton.PRIMARY);
-        field2.requestFocus();
+        interact(() -> field2.requestFocus());
         robotContext().getTypeRobot().push(new KeyCodeCombination(KeyCode.V, KeyCombination.SHORTCUT_DOWN));
 
         // then:

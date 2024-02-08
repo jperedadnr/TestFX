@@ -78,6 +78,7 @@ public class AwtRobotAdapterTest {
     public static void setupSpec() throws Exception {
         assumeFalse("skipping AwtRobotAdapterTest - in headless environment",
             GraphicsEnvironment.getLocalGraphicsEnvironment().isHeadlessInstance());
+        assumeThat(System.getProperty("testfx.headless"), is(not(equalTo("true"))));
         FxToolkit.registerPrimaryStage();
     }
 
