@@ -95,6 +95,16 @@ publishing {
 						roles = ["project maintainer"]
 					}
 				}
+
+				// somehow the groupId of the javafx dependencies is missing, add it:
+				withXml {
+                    Node pomNode = asNode()
+                    pomNode.dependencies.'*'.findAll() {
+						it.artifactId.text().startsWith('javafx')
+                    }.each {
+						it.appendNode('groupId', 'org.openjfx')
+                    }
+				}
 			}
 		}
 				//.writeTo("$buildDir/libs/${project.name}-${project.version}.pom")
