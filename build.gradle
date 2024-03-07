@@ -119,6 +119,11 @@ subprojects { subproject ->
         groovyOptions.encoding = 'UTF-8'
     }
 
+    // disable module metadata for now
+    tasks.withType(GenerateModuleMetadata) {
+        enabled = false
+    }
+
     test {
         reports.html.required = false
         testLogging {
