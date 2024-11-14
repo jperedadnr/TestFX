@@ -20,4 +20,7 @@ module org.testfx.junit {
 
     requires org.assertj.core;
     requires junit;
+
+    exports org.testfx.framework.junit;
+
 }

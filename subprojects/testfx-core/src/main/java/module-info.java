@@ -15,25 +15,25 @@
  * specific language governing permissions and limitations under the Licence.
  */
 module org.testfx {
-    requires javafx.controls;
-    requires javafx.swing;
-    requires javafx.fxml;
+    requires static javafx.controls;
+    requires static javafx.swing;
+    requires static javafx.fxml;
     
-    requires org.hamcrest;
-    requires org.assertj.core;
-    requires osgi.core;
+    requires static org.hamcrest;
+    requires static org.assertj.core;
+    requires static osgi.core;
 
     exports org.testfx.api;
     exports org.testfx.assertions.api;
+    exports org.testfx.matcher.base;
+    exports org.testfx.matcher.control;
+    exports org.testfx.osgi;
     exports org.testfx.robot;
+    exports org.testfx.service.adapter;
+    exports org.testfx.service.finder;
+    exports org.testfx.service.locator;
+    exports org.testfx.service.query;
+    exports org.testfx.service.support;
     exports org.testfx.toolkit;
     exports org.testfx.util;
-    
-    exports org.testfx.service.locator.impl to junit;
-    exports org.testfx.service.query.impl to junit;
-    exports org.testfx.service.finder.impl to junit;
-    exports org.testfx.service.adapter.impl to junit;
-    exports org.testfx.service.support.impl to junit;
-    exports org.testfx.robot.impl to junit;
-    exports org.testfx.toolkit.impl to junit;
 }

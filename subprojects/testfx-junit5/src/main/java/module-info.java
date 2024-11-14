@@ -20,4 +20,8 @@ module org.testfx.junit5 {
 
     requires org.assertj.core;
     requires org.junit.jupiter.api;
+
+    exports org.testfx.framework.junit5;
+    exports org.testfx.framework.junit5.utils;
+
 }
