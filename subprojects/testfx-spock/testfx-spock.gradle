@@ -20,7 +20,7 @@ apply plugin: 'org.openjfx.javafxplugin'
 ext.pomName = 'TestFX Spock'
 ext.pomDescription = 'TestFX Spock library'
 ext.moduleName = 'org.testfx.spock'
-ext.openjfxVersion = '17.0.10'
+ext.openjfxVersion = '23.0.1'
 ext.headlessSDKPath= "${System.properties['user.home']}${File.separator}Downloads${File.separator}javafx-sdk-23"
 
 apply plugin: 'groovy'
@@ -73,6 +73,6 @@ javafx {
 dependencies {
     implementation project(":testfx-core")
 
-    compileOnly 'org.spockframework:spock-core:2.4-M1-groovy-4.0'
-    testCompileOnly 'org.spockframework:spock-core:2.4-M1-groovy-4.0'
+    compileOnly 'org.spockframework:spock-core:2.4-M4-groovy-4.0'
+    testCompileOnly 'org.spockframework:spock-core:2.4-M4-groovy-4.0'
 }

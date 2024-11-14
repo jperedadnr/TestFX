@@ -20,7 +20,7 @@ apply plugin: 'org.openjfx.javafxplugin'
 ext.pomName = 'TestFX JUnit'
 ext.pomDescription = 'TestFX JUnit library'
 ext.moduleName = 'org.testfx.junit'
-ext.openjfxVersion = '17.0.10'
+ext.openjfxVersion = '23.0.1'
 ext.headlessSDKPath= "${System.properties['user.home']}${File.separator}Downloads${File.separator}javafx-sdk-23"
 
 repositories {
@@ -38,13 +38,13 @@ afterEvaluate {
     dependencies {
         api project(":testfx-core")
 
-        api("junit:junit:4.13-beta-3") {
+        api("junit:junit:4.13.2") {
             exclude group: 'org.hamcrest', module: 'hamcrest-core'
             exclude group: 'org.hamcrest', module: 'hamcrest-library'
         }
-        api 'org.hamcrest:hamcrest:2.2'
-        testImplementation 'org.hamcrest:hamcrest:2.2'
-        implementation "org.assertj:assertj-core:3.13.2"
+        api 'org.hamcrest:hamcrest:3.0'
+        testImplementation 'org.hamcrest:hamcrest:3.0'
+        implementation "org.assertj:assertj-core:3.26.3"
     }
 
     configurations {

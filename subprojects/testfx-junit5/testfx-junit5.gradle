@@ -20,7 +20,7 @@ apply plugin: 'org.openjfx.javafxplugin'
 ext.pomName = 'TestFX JUnit5'
 ext.pomDescription = 'TestFX JUnit5 library'
 ext.moduleName = 'org.testfx.junit5'
-ext.openjfxVersion = '17.0.10'
+ext.openjfxVersion = '23.0.1'
 ext.headlessSDKPath= "${System.properties['user.home']}${File.separator}Downloads${File.separator}javafx-sdk-23"
 
 repositories {
@@ -38,13 +38,13 @@ afterEvaluate {
     dependencies {
         api project(":testfx-core")
 
-        compileOnly 'org.junit.jupiter:junit-jupiter-api:5.5.1'
-        testCompileOnly 'org.junit.jupiter:junit-jupiter-api:5.5.1'
-        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.5.1'
-        implementation 'org.hamcrest:hamcrest:2.2'
-        testImplementation  'org.hamcrest:hamcrest:2.2'
-        implementation "org.assertj:assertj-core:3.13.2"
-        testImplementation 'org.awaitility:awaitility:4.0.2'
+        compileOnly 'org.junit.jupiter:junit-jupiter-api:5.11.3'
+        testCompileOnly 'org.junit.jupiter:junit-jupiter-api:5.11.3'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.11.3'
+        implementation 'org.hamcrest:hamcrest:3.0'
+        testImplementation  'org.hamcrest:hamcrest:3.0'
+        implementation "org.assertj:assertj-core:3.26.3"
+        testImplementation 'org.awaitility:awaitility:4.2.2'
     }
 
     configurations {
