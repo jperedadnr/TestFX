@@ -54,7 +54,7 @@ jobs:
           Invoke-WebRequest https://download2.gluonhq.com/openjfx/forks/johan/headless/${{ matrix.FILE }}.zip -OutFile ${{ matrix.FILE }}.zip
           Expand-Archive .\${{ matrix.FILE }}.zip -Force
           Move-Item -Path .\${{ matrix.FILE }}\javafx-sdk-24 -Destination .\
-          echo "JAVAFX_HOME=${{ github.workspace }}\javafx-sdk-24" >> %GITHUB_ENV%
+          echo "JAVAFX_HOME=${{ github.workspace }}\javafx-sdk-24" >> $env:GITHUB_ENV
 
       - name: Cache Gradle Resources
         uses: actions/cache@v4
