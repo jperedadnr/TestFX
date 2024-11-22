@@ -81,8 +81,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gradlew -Dtestfx.headless=true versions check
-        shell: bash
+          .\gradlew -Dtestfx.headless=true versions check
+        shell: cmd
 
       - name: Publish Test Results (macOS)
         uses: EnricoMi/publish-unit-test-result-action/macos@v2
