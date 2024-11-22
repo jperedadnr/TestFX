@@ -21,10 +21,8 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [ macos-latest, windows-latest ]
+        os: [ windows-latest ]
         include:
-          - os: macos-latest
-            FILE: openjfx-24+77_headless_mac-aarch64_bin-sdk
           - os: windows-latest
             FILE: openjfx-24+77_headless_windows-x86_64_bin-sdk
 
