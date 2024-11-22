@@ -32,7 +32,9 @@ jobs:
     steps:
       - name: CRLF (Windows)
         if: runner.os == 'Windows'
-        run: git config --global core.autocrlf input
+        run: |
+          git config --global core.autocrlf false
+          git config --system core.eol lf
 
       - name: Checkout Code
         uses: actions/checkout@v4
