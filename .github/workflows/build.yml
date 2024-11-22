@@ -42,7 +42,7 @@ jobs:
       - name: Download SDK (Linux/macOS)
         if: runner.os != 'Windows'
         run: |
-          wget https://download2.gluonhq.com/openjfx/forks/johan/headless/${{ matrix.FILE }}.zip -O ${{ matrix.FILE }}.zip
+          wget -nv https://download2.gluonhq.com/openjfx/forks/johan/headless/${{ matrix.FILE }}.zip -O ${{ matrix.FILE }}.zip
           unzip -q ${{ matrix.FILE }}.zip
           echo "JAVAFX_HOME=${{ github.workspace }}/javafx-sdk-24" >> ${GITHUB_ENV}
 
@@ -72,7 +72,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          export _JAVA_OPTIONS='-Dtestfx.headless=true -Dtestfx.verbose=true -Dprism.verbose=true'
+          export _JAVA_TOOL_OPTIONS='-Dtestfx.headless=true -Dtestfx.verbose=true -Dprism.verbose=true'
           ./gradlew versions check
 
       - name: Build (Windows)
