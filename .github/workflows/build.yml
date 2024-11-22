@@ -47,7 +47,7 @@ jobs:
         if: runner.os != 'Windows'
         run: |
           wget https://download2.gluonhq.com/openjfx/forks/johan/headless/${{ matrix.FILE }}.zip -O ${{ matrix.FILE }}.zip
-          unzip ${{ matrix.FILE }}.zip
+          unzip -q ${{ matrix.FILE }}.zip
           echo "JAVAFX_HOME=${{ github.workspace }}/javafx-sdk-24" >> ${GITHUB_ENV}
 
       - name: Download SDK (Windows)
@@ -64,6 +64,12 @@ jobs:
           path: ~/.gradle
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
           restore-keys: ${{ runner.os }}-gradle
+
+      - name: Set up Virtual Display (for Linux)
+        if: runner.os == 'Linux'
+        run: |
+          export DISPLAY=:99
+          Xvfb -ac :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
 
       - name: Build (Linux/macOS)
         if: runner.os != 'Windows'
