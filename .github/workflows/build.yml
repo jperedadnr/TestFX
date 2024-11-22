@@ -70,7 +70,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          export _JAVA_OPTIONS=-Dtestfx.headless=true
+          export _JAVA_OPTIONS='-Dtestfx.headless=true -Dtestfx.verbose=true -Dprism.verbose=true'
           ./gradlew versions check
 
       - name: Build (Windows)
