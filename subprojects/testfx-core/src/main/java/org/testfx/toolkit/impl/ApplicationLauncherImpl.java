@@ -30,9 +30,7 @@ public class ApplicationLauncherImpl implements ApplicationLauncher {
 
     private void initHeadless() {
         if (Boolean.getBoolean("testfx.headless")) {
-//            if (Boolean.getBoolean("testfx.verbose")) {
             System.out.println("testfx: headless mode requested");
-//            }
             System.setProperty("glass.platform", "Headless");
         } else {
             System.out.println("testfx: non-headless mode requested");
