@@ -79,7 +79,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set _JAVA_OPTIONS=-Dtestfx.headless=true
-          gradlew versions check
+          .\gradlew versions check
 
       - name: Publish Test Results
         uses: EnricoMi/publish-unit-test-result-action/composite@v2
