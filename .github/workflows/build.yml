@@ -84,7 +84,7 @@ jobs:
           .\gradlew -Dtestfx.headless=true versions check
 
       - name: Publish Test Results
-        uses: EnricoMi/publish-unit-test-result-action/v2
+        uses: EnricoMi/publish-unit-test-result-action@v2
         if: always()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
