@@ -30,6 +30,10 @@ jobs:
     timeout-minutes: 20
 
     steps:
+      - name: CRLF (Windows)
+        if: runner.os == 'Windows'
+        run: git config --global core.autocrlf input
+
       - name: Checkout Code
         uses: actions/checkout@v4
 
