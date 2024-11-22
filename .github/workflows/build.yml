@@ -21,12 +21,12 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [ macos-latest, ubuntu-latest ]
+        os: [ macos-latest, windows-latest ]
         include:
           - os: macos-latest
             FILE: openjfx-24+77_headless_mac-aarch64_bin-sdk
-          - os: ubuntu-latest
-            FILE: openjfx-24+77_headless_linux-x86_64_bin-sdk
+          - os: windows-latest
+            FILE: openjfx-24+77_headless_windows-x86_64_bin-sdk
 
     runs-on: ${{ matrix.os }}
     timeout-minutes: 20
