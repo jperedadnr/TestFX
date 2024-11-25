@@ -21,10 +21,14 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [ windows-latest ]
+        os: [ macos-latest, ubuntu-latest, windows-latest ]
         include:
+          - os: macos-latest
+            FILE: openjfx-24+874_headless_mac-aarch64_bin-sdk
+          - os: ubuntu-latest
+            FILE: openjfx-24+871_headless_linux-x86_64_bin-sdk
           - os: windows-latest
-            FILE: openjfx-24+77_headless_windows-x86_64_bin-sdk
+            FILE: openjfx-24+875_headless_windows-x86_64_bin-sdk
 
     runs-on: ${{ matrix.os }}
     timeout-minutes: 20
@@ -62,12 +66,6 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
           restore-keys: ${{ runner.os }}-gradle
 
-      - name: Set up Virtual Display (for Linux)
-        if: runner.os == 'Linux'
-        run: |
-          export DISPLAY=:99
-          Xvfb -ac :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
-
       - name: Build (Linux/macOS)
         if: runner.os != 'Windows'
         env:
@@ -83,9 +81,20 @@ jobs:
           .\gradlew -Dtestfx.headless=true versions check
         shell: cmd
 
+      - name: Publish Test Results (Linux)
+        uses: EnricoMi/publish-unit-test-result-action/linux@v2
+        if: runner.os == 'Linux'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          check_name: Unit Test Results (${{ runner.os }})
+          report_individual_runs: true
+          check_run_annotations_branch: master
+          check_run_annotations: all tests, skipped tests
+          files: subprojects/**/build/test-results/**/*.xml
+
       - name: Publish Test Results (macOS)
         uses: EnricoMi/publish-unit-test-result-action/macos@v2
-        if: runner.os != 'Windows'
+        if: runner.os == 'macOS'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           check_name: Unit Test Results (${{ runner.os }})
