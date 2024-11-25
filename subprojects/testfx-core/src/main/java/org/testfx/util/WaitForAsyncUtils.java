@@ -566,7 +566,8 @@ public final class WaitForAsyncUtils {
         out.append(printTrace(st));
         Throwable cause = e.getCause();
         while (cause != null) {
-            out.append(cause.getClass().getName()).append(": ").append(cause.getMessage()).append(System.lineSeparator());
+            out.append(cause.getClass().getName()).append(": ").append(cause.getMessage())
+                    .append(System.lineSeparator());
             st = cause.getStackTrace();
             out.append(printTrace(st));
             cause = cause.getCause();
