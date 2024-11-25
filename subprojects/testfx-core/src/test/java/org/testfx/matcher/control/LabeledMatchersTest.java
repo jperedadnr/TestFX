@@ -56,7 +56,7 @@ public class LabeledMatchersTest extends FxRobot {
         assertThatThrownBy(() -> assertThat(quuxButton, LabeledMatchers.hasText("foobar")))
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("\nExpected: Labeled has text \"foobar\"\n     " +
-                        "but: was \"quux\"");
+                        "but: was \"quux\"".replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
     @Test
@@ -69,7 +69,7 @@ public class LabeledMatchersTest extends FxRobot {
         assertThatThrownBy(() -> assertThat(quuxButton, LabeledMatchers.hasText(endsWith("bar"))))
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("\nExpected: Labeled has a string ending with \"bar\"\n     " +
-                        "but: was \"quux\"");
+                        "but: was \"quux\"".replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
 }

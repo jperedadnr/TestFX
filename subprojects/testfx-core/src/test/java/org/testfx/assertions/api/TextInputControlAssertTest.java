@@ -57,7 +57,7 @@ public class TextInputControlAssertTest extends FxRobot {
         assertThatThrownBy(() -> assertThat(quuxTextField).hasText("foobar"))
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("Expected: TextInputControl has text \"foobar\"\n     " +
-                        "but: was TextField with text: \"quux\"");
+                        "but: was TextField with text: \"quux\"".replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
     @Test
@@ -70,7 +70,7 @@ public class TextInputControlAssertTest extends FxRobot {
         assertThatThrownBy(() -> assertThat(foobarTextField).doesNotHaveText("foobar"))
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("Expected: TextInputControl has text \"foobar\" to be false\n     " +
-                        "but: was TextField with text: \"foobar\"");
+                        "but: was TextField with text: \"foobar\"".replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
     @Test
@@ -83,7 +83,7 @@ public class TextInputControlAssertTest extends FxRobot {
         assertThatThrownBy(() -> assertThat(quuxTextField).hasText(endsWith("bar")))
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("Expected: TextInputControl has a string ending with \"bar\"\n     " +
-                        "but: was TextField with text: \"quux\"");
+                        "but: was TextField with text: \"quux\"".replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
     @Test
@@ -96,6 +96,6 @@ public class TextInputControlAssertTest extends FxRobot {
         assertThatThrownBy(() -> assertThat(foobarTextField).doesNotHaveText(endsWith("bar")))
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("Expected: TextInputControl has a string ending with \"bar\" to be false\n     " +
-                        "but: was TextField with text: \"foobar\"");
+                        "but: was TextField with text: \"foobar\"".replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 }

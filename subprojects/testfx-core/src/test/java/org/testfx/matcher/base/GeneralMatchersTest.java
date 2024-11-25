@@ -68,7 +68,7 @@ public class GeneralMatchersTest {
         assertThatThrownBy(() -> assertThat(nullNode, notNullNodeMatcher))
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("\nExpected: Node is not null\n" +
-                        "     but: was null");
+                        "     but: was null".replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
     @Test
@@ -82,7 +82,7 @@ public class GeneralMatchersTest {
         assertThatThrownBy(() -> assertThat(notMatchingNode, hasChildrenParentMatcher))
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("\nExpected: Parent has children\n" +
-                        "     but: was <" + notMatchingNode.toString() + ">");
+                        "     but: was <" + notMatchingNode.toString() + ">".replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
     @Test
@@ -96,7 +96,7 @@ public class GeneralMatchersTest {
         assertThatThrownBy(() -> assertThat(nullNode, hasChildrenParentMatcher))
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("\nExpected: Parent has children\n" +
-                        "     but: was null");
+                        "     but: was null".replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
     @Test
@@ -111,7 +111,7 @@ public class GeneralMatchersTest {
         assertThatThrownBy(() -> assertThat(notParentNode, hasChildrenParentMatcher))
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("\nExpected: Parent has children\n" +
-                        "     but: was <" + notParentNode.toString() + ">");
+                        "     but: was <" + notParentNode.toString() + ">".replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
 }

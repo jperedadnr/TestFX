@@ -98,7 +98,7 @@ public class NodeMatchersTest extends TestCaseBase {
         // then:
         assertThatThrownBy(() -> assertThat(textField, NodeMatchers.isFocused()))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessageStartingWith("\nExpected: Node has focus\n");
+                .hasMessageStartingWith("\nExpected: Node has focus\n".replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
     @Test
@@ -132,7 +132,7 @@ public class NodeMatchersTest extends TestCaseBase {
         // then:
         assertThatThrownBy(() -> assertThat(textField, NodeMatchers.isNotFocused()))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessageStartingWith("\nExpected: Node does not have focus\n");
+                .hasMessageStartingWith("\nExpected: Node does not have focus\n".replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
     @Test
@@ -172,7 +172,7 @@ public class NodeMatchersTest extends TestCaseBase {
         // then:
         assertThatThrownBy(() -> assertThat(parent, NodeMatchers.hasChild(".button")))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessageStartingWith("\nExpected: Node has child \".button\"\n");
+                .hasMessageStartingWith("\nExpected: Node has child \".button\"\n".replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
     @Test
@@ -193,7 +193,7 @@ public class NodeMatchersTest extends TestCaseBase {
         // then:
         assertThatThrownBy(() -> assertThat(parent, NodeMatchers.hasChildren(2, ".button")))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessageStartingWith("\nExpected: Node has 2 children \".button\"\n");
+                .hasMessageStartingWith("\nExpected: Node has 2 children \".button\"\n".replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
 }

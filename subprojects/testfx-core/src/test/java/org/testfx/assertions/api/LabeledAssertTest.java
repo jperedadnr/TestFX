@@ -57,7 +57,7 @@ public class LabeledAssertTest extends FxRobot {
         assertThatThrownBy(() -> assertThat(quuxButton).hasText("foobar"))
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("Expected: Labeled has text \"foobar\"\n     " +
-                        "but: was \"quux\"");
+                        "but: was \"quux\"".replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
     @Test
@@ -70,7 +70,7 @@ public class LabeledAssertTest extends FxRobot {
         assertThatThrownBy(() -> assertThat(foobarButton).doesNotHaveText("foobar"))
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("Expected: Labeled has text \"foobar\" to be false\n     " +
-                        "but: was \"foobar\"");
+                        "but: was \"foobar\"".replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
     @Test
@@ -83,7 +83,7 @@ public class LabeledAssertTest extends FxRobot {
         assertThatThrownBy(() -> assertThat(quuxButton).hasText(endsWith("bar")))
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("Expected: Labeled has a string ending with \"bar\"\n     " +
-                        "but: was \"quux\"");
+                        "but: was \"quux\"".replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
     @Test
@@ -96,6 +96,6 @@ public class LabeledAssertTest extends FxRobot {
         assertThatThrownBy(() -> assertThat(foobarButton).doesNotHaveText(startsWith("foo")))
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("Expected: Labeled has a string starting with \"foo\" to be false\n     " +
-                        "but: was \"foobar\"");
+                        "but: was \"foobar\"".replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 }
