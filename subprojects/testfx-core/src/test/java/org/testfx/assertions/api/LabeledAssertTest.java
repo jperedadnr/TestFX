@@ -95,7 +95,7 @@ public class LabeledAssertTest extends FxRobot {
     public void doesNotHaveText_matcher_fails() {
         assertThatThrownBy(() -> assertThat(foobarButton).doesNotHaveText(startsWith("foo")))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("Expected: Labeled has a string starting with \"foo\" to be false" + System.lineSeparator() + "     " +
-                        "but: was \"foobar\"");
+                .hasMessage("Expected: Labeled has a string starting with \"foo\" to be false" +
+                        System.lineSeparator() + "     but: was \"foobar\"");
     }
 }

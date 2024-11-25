@@ -109,8 +109,8 @@ public class TextAssertTest extends FxRobot {
     public void doesNotHaveText_matcher_fails() {
         assertThatThrownBy(() -> assertThat(foobarText).doesNotHaveText(startsWith("foo")))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("Expected: Text has a string starting with \"foo\" to be false" + System.lineSeparator() + "     " +
-                        "but: was Text with text: \"foobar\"");
+                .hasMessage("Expected: Text has a string starting with \"foo\" to be false" + System.lineSeparator() +
+                        "     but: was Text with text: \"foobar\"");
     }
 
     @Test
@@ -143,8 +143,8 @@ public class TextAssertTest extends FxRobot {
         assertThatThrownBy(() -> assertThat(foobarText).doesNotHaveFont(Font.getDefault()))
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage(String.format("Expected: Text has font " +
-                        "\"%1$s\" with family (\"%2$s\") and size (%3$.1f) to be false" + System.lineSeparator() + "     " +
-                        "but: was Text with font: " +
+                        "\"%1$s\" with family (\"%2$s\") and size (%3$.1f) to be false" + System.lineSeparator() +
+                        "     but: was Text with font: " +
                         "\"%1$s\" with family (\"%2$s\") and size (%3$.1f)",
                         Font.getDefault().getName(), Font.getDefault().getFamily(), Font.getDefault().getSize()));
     }
@@ -173,8 +173,8 @@ public class TextAssertTest extends FxRobot {
     public void doesNotHaveFontSmoothingType_fails() {
         assertThatThrownBy(() -> assertThat(foobarText).doesNotHaveFontSmoothingType(FontSmoothingType.GRAY))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("Expected: Text has font smoothing type: \"GRAY\" to be false" + System.lineSeparator() + "     " +
-                        "but: was Text with font smoothing type: \"GRAY\"");
+                .hasMessage("Expected: Text has font smoothing type: \"GRAY\" to be false" + System.lineSeparator() +
+                        "     but: was Text with font smoothing type: \"GRAY\"");
     }
 
     @Test

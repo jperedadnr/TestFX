@@ -59,8 +59,8 @@ public class ParentMatchersTest {
         // then:
         assertThatThrownBy(() -> assertThat(parent, ParentMatchers.hasChild()))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage(System.lineSeparator() + "Expected: Parent has at least one child" + System.lineSeparator() + "     " +
-                        "but: was empty (contained no children)");
+                .hasMessage(System.lineSeparator() + "Expected: Parent has at least one child" +
+                        System.lineSeparator() + "     but: was empty (contained no children)");
     }
 
     @Test
@@ -81,8 +81,8 @@ public class ParentMatchersTest {
         // then:
         assertThatThrownBy(() -> assertThat(parent, ParentMatchers.hasChildren(3)))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage(System.lineSeparator() + "Expected: Parent has exactly 3 children" + System.lineSeparator() + "     " +
-                        "but: was [Label, Button] (which has 2 children)");
+                .hasMessage(System.lineSeparator() + "Expected: Parent has exactly 3 children" +
+                        System.lineSeparator() + "     but: was [Label, Button] (which has 2 children)");
     }
 
 }

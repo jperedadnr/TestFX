@@ -82,8 +82,8 @@ public class ListViewAssertTest extends FxRobot {
     public void doesNotHaveListCell_fails() {
         assertThatThrownBy(() -> assertThat(listView).doesNotHaveListCell("alice"))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("Expected: ListView has list cell \"alice\" to be false" + System.lineSeparator() + "     " +
-                        "but: was [alice, bob, carol, dave]");
+                .hasMessage("Expected: ListView has list cell \"alice\" to be false" + System.lineSeparator() +
+                        "     but: was [alice, bob, carol, dave]");
     }
 
     @Test
@@ -148,8 +148,8 @@ public class ListViewAssertTest extends FxRobot {
         // then:
         assertThatThrownBy(() -> assertThat(listView).isNotEmpty())
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("Expected: ListView is empty (contains no items) to be false" + System.lineSeparator() + "     " +
-                        "but: was empty");
+                .hasMessage("Expected: ListView is empty (contains no items) to be false" + System.lineSeparator() +
+                        "     but: was empty");
     }
 
     @Test
@@ -161,8 +161,8 @@ public class ListViewAssertTest extends FxRobot {
     public void hasPlaceholder_fails() {
         assertThatThrownBy(() -> assertThat(listView).hasPlaceholder(new Label("foobar")))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("Expected: ListView has labeled placeholder containing text: \"foobar\"" + System.lineSeparator() + "     " +
-                        "but: was labeled placeholder containing text: \"Empty!\"");
+                .hasMessage("Expected: ListView has labeled placeholder containing text: \"foobar\"" +
+                        System.lineSeparator() + "     but: was labeled placeholder containing text: \"Empty!\"");
     }
 
     @Test
@@ -174,8 +174,8 @@ public class ListViewAssertTest extends FxRobot {
     public void doesNotHavePlaceholder_fails() {
         assertThatThrownBy(() -> assertThat(listView).doesNotHavePlaceholder(new Label("Empty!")))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("Expected: ListView has labeled placeholder containing text: \"Empty!\" to be false" + System.lineSeparator() +
-                        "     but: was labeled placeholder containing text: \"Empty!\"");
+                .hasMessage("Expected: ListView has labeled placeholder containing text: \"Empty!\" to be false" +
+                        System.lineSeparator() + "     but: was labeled placeholder containing text: \"Empty!\"");
     }
 
     @Test
@@ -187,8 +187,9 @@ public class ListViewAssertTest extends FxRobot {
     public void hasVisiblePlaceholder_fails_whenPlaceHolderHasWrongText() {
         assertThatThrownBy(() -> assertThat(listView).hasVisiblePlaceholder(new Label("foobar")))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("Expected: ListView has visible labeled placeholder containing text: \"foobar\"" + System.lineSeparator() + "     " +
-                        "but: was visible labeled placeholder containing text: \"Empty!\"");
+                .hasMessage("Expected: ListView has visible labeled placeholder containing text: \"foobar\"" +
+                        System.lineSeparator() +
+                        "     but: was visible labeled placeholder containing text: \"Empty!\"");
     }
 
     @Test
@@ -200,8 +201,9 @@ public class ListViewAssertTest extends FxRobot {
         // then:
         assertThatThrownBy(() -> assertThat(listView).hasVisiblePlaceholder(new Label("Empty!")))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("Expected: ListView has visible labeled placeholder containing text: \"Empty!\"" + System.lineSeparator() + "     " +
-                        "but: was invisible labeled placeholder containing text: \"Empty!\"");
+                .hasMessage("Expected: ListView has visible labeled placeholder containing text: \"Empty!\"" +
+                        System.lineSeparator() +
+                        "     but: was invisible labeled placeholder containing text: \"Empty!\"");
     }
 
     @Test
@@ -229,7 +231,8 @@ public class ListViewAssertTest extends FxRobot {
         assertThatThrownBy(() -> assertThat(listView).doesNotHaveVisiblePlaceholder(new Label("Empty!")))
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("Expected: ListView has visible labeled placeholder containing text: \"Empty!\" to be" +
-                        " false" + System.lineSeparator() + "     but: was visible labeled placeholder containing text: \"Empty!\"");
+                        " false" + System.lineSeparator() +
+                        "     but: was visible labeled placeholder containing text: \"Empty!\"");
     }
 
 }

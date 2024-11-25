@@ -137,7 +137,8 @@ public class TableViewAssertTest extends FxRobot {
         // then:
         assertThatThrownBy(() -> assertThat(tableView).hasTableCell("ALICE!!!"))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessageStartingWith("Expected: TableView has table cell \"ALICE!!!\"" + System.lineSeparator() + "     ");
+                .hasMessageStartingWith("Expected: TableView has table cell \"ALICE!!!\"" +
+                        System.lineSeparator() + "     ");
         // FIXME(mike): Currently the table is printed without applying the cell value factory
         // once that is fixed, add these lines:
         // "but: was [[ALICE!, 30], [BOB!, 31], [CAROL!, null], [DAVE!, null]]");
@@ -190,8 +191,8 @@ public class TableViewAssertTest extends FxRobot {
     public void doesNotHaveTableCell_fails() {
         assertThatThrownBy(() -> assertThat(tableView).doesNotHaveTableCell("alice"))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("Expected: TableView has table cell \"alice\" to be false" + System.lineSeparator() + "     " +
-                        "but: was [[alice, 30], [bob, 31], [carol, null], [dave, null]]");
+                .hasMessage("Expected: TableView has table cell \"alice\" to be false" + System.lineSeparator() +
+                        "     but: was [[alice, 30], [bob, 31], [carol, null], [dave, null]]");
     }
 
     @Test
@@ -395,8 +396,8 @@ public class TableViewAssertTest extends FxRobot {
         // then:
         assertThatThrownBy(() -> assertThat(tableView).doesNotContainRowAtIndex(0, "alice", 30))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("Expected: TableView has row: [alice, 30] at index 0 to be false" + System.lineSeparator() + "     " +
-                        "but: was [alice, 30] at index: 0");
+                .hasMessage("Expected: TableView has row: [alice, 30] at index 0 to be false" + System.lineSeparator() +
+                        "     but: was [alice, 30] at index: 0");
     }
 
     @Test

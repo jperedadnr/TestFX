@@ -107,8 +107,8 @@ public class ComboBoxAssertTest extends FxRobot {
     public void doesNotHaveSelectedItem_fails() {
         assertThatThrownBy(() -> assertThat(comboBox).doesNotHaveSelectedItem("alice"))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("Expected: ComboBox has selection \"alice\" to be false" + System.lineSeparator() + "     " +
-                        "but: was \"alice\"");
+                .hasMessage("Expected: ComboBox has selection \"alice\" to be false" + System.lineSeparator() +
+                        "     but: was \"alice\"");
     }
 
     @Test
@@ -173,8 +173,8 @@ public class ComboBoxAssertTest extends FxRobot {
         // not in correct order, should fail
         assertThatThrownBy(() -> assertThat(comboBox).containsExactlyItemsInOrder("bob", "alice", "dave", "carol"))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("Expected: ComboBox contains exactly items in order [bob, alice, dave, carol]" + System.lineSeparator() +
-                        "     but: was [alice, bob, carol, dave]");
+                .hasMessage("Expected: ComboBox contains exactly items in order [bob, alice, dave, carol]" +
+                        System.lineSeparator() + "     but: was [alice, bob, carol, dave]");
     }
 
 }

@@ -49,8 +49,8 @@ public class ColorAssertTest extends FxRobot {
     public void isNotColor_fails() {
         assertThatThrownBy(() -> assertThat(Color.color(1, 0, 0)).isNotColor(Color.RED))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("Expected: Color has color \"RED\" (#ff0000) to be false" + System.lineSeparator() + "     " +
-                        "but: was \"RED\" (#ff0000)");
+                .hasMessage("Expected: Color has color \"RED\" (#ff0000) to be false" + System.lineSeparator() +
+                        "     but: was \"RED\" (#ff0000)");
     }
 
     @Test
@@ -62,7 +62,8 @@ public class ColorAssertTest extends FxRobot {
     public void isColor_colorMatcher_fails() {
         assertThatThrownBy(() -> assertThat(Color.color(0.5, 0, 0)).isColor(Color.RED, new PixelMatcherRgb(0.01, 0)))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessageStartingWith("Expected: Color has color \"RED\" (#ff0000)" + System.lineSeparator() + "     ");
+                .hasMessageStartingWith("Expected: Color has color \"RED\" (#ff0000)" + System.lineSeparator() +
+                        "     ");
     }
 
     @Test
@@ -74,7 +75,8 @@ public class ColorAssertTest extends FxRobot {
     public void isNotColor_colorMatcher_fails() {
         assertThatThrownBy(() -> assertThat(Color.color(0.9, 0, 0)).isNotColor(Color.RED, new PixelMatcherRgb(0.6, 0)))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessageStartingWith("Expected: Color has color \"RED\" (#ff0000) to be false" + System.lineSeparator() + "     ");
+                .hasMessageStartingWith("Expected: Color has color \"RED\" (#ff0000) to be false" +
+                        System.lineSeparator() + "     ");
     }
 
     @Test
@@ -128,8 +130,8 @@ public class ColorAssertTest extends FxRobot {
     public void hasClosestNamedColor_string_fails() {
         assertThatThrownBy(() -> assertThat(Color.color(0.6, 0.1, 0.1)).hasClosestNamedColor("GAINSBORO"))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("Expected: Color has closest named color \"GAINSBORO\" (#dcdcdc)" + System.lineSeparator() + "     " +
-                        "but: was \"#991a1a\" which has closest named color: \"BROWN\"");
+                .hasMessage("Expected: Color has closest named color \"GAINSBORO\" (#dcdcdc)" + System.lineSeparator() +
+                        "     but: was \"#991a1a\" which has closest named color: \"BROWN\"");
     }
 
     @Test
@@ -157,16 +159,16 @@ public class ColorAssertTest extends FxRobot {
     public void doesNotHaveClosestNamedColor_string_fails() {
         assertThatThrownBy(() -> assertThat(Color.color(0.6, 0.1, 0.1)).doesNotHaveClosestNamedColor("BROWN"))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("Expected: Color has closest named color \"BROWN\" (#a52a2a) to be false" + System.lineSeparator() + "     " +
-                        "but: was \"#991a1a\" which has closest named color: \"BROWN\"");
+                .hasMessage("Expected: Color has closest named color \"BROWN\" (#a52a2a) to be false" +
+                        System.lineSeparator() + "     but: was \"#991a1a\" which has closest named color: \"BROWN\"");
     }
 
     @Test
     public void doesNotHaveClosestNamedColor_color_fails() {
         assertThatThrownBy(() -> assertThat(Color.color(0.6, 0.1, 0.1)).doesNotHaveClosestNamedColor(Color.BROWN))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("Expected: Color has closest named color \"BROWN\" (#a52a2a) to be false" + System.lineSeparator() + "     " +
-                        "but: was \"#991a1a\" which has closest named color: \"BROWN\"");
+                .hasMessage("Expected: Color has closest named color \"BROWN\" (#a52a2a) to be false" +
+                        System.lineSeparator() + "     but: was \"#991a1a\" which has closest named color: \"BROWN\"");
     }
 
     @Test
