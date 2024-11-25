@@ -69,8 +69,7 @@ public class ButtonMatchersTest extends FxRobot {
     public void isCancelButton_fails() {
         assertThatThrownBy(() -> assertThat(button, ButtonMatchers.isCancelButton()))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessageStartingWith("\nExpected: Button is cancel button\n"
-                        .replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                .hasMessageStartingWith(System.lineSeparator() + "Expected: Button is cancel button" + System.lineSeparator());
     }
 
     @Test
@@ -86,7 +85,6 @@ public class ButtonMatchersTest extends FxRobot {
     public void isDefaultButton_fails() {
         assertThatThrownBy(() -> assertThat(button, ButtonMatchers.isDefaultButton()))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessageStartingWith("\nExpected: Button is default button\n"
-                        .replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                .hasMessageStartingWith(System.lineSeparator() + "Expected: Button is default button" + System.lineSeparator());
     }
 }

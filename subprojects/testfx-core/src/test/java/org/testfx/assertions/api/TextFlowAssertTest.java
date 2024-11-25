@@ -63,9 +63,8 @@ public class TextFlowAssertTest extends FxRobot {
     public void hasText_fails() {
         assertThatThrownBy(() -> assertThat(textFlow).hasText("foobar baaz"))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("Expected: TextFlow has text \"foobar baaz\"\n     " +
-                        "but: was TextFlow containing text: \"foobar quux\""
-                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                .hasMessage("Expected: TextFlow has text \"foobar baaz\"" + System.lineSeparator() + "     " +
+                        "but: was TextFlow containing text: \"foobar quux\"");
     }
 
     @Test
@@ -77,9 +76,8 @@ public class TextFlowAssertTest extends FxRobot {
     public void doesNotHaveText_fails() {
         assertThatThrownBy(() -> assertThat(textFlow).doesNotHaveText("foobar quux"))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("Expected: TextFlow has text \"foobar quux\" to be false\n     " +
-                        "but: was TextFlow containing text: \"foobar quux\""
-                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                .hasMessage("Expected: TextFlow has text \"foobar quux\" to be false" + System.lineSeparator() + "     " +
+                        "but: was TextFlow containing text: \"foobar quux\"");
     }
 
     @Test
@@ -91,18 +89,16 @@ public class TextFlowAssertTest extends FxRobot {
     public void hasColoredText_fails() {
         assertThatThrownBy(() -> assertThat(textFlow).hasColoredText("foobar <BLUE>quux</BLUE>"))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("Expected: TextFlow has colored text \"foobar <BLUE>quux</BLUE>\"\n     " +
-                        "but: was TextFlow with colored text: \"foobar <RED>quux</RED>\""
-                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                .hasMessage("Expected: TextFlow has colored text \"foobar <BLUE>quux</BLUE>\"" + System.lineSeparator() + "     " +
+                        "but: was TextFlow with colored text: \"foobar <RED>quux</RED>\"");
     }
 
     @Test
     public void hasColoredText_withBogusColor_fails() {
         assertThatThrownBy(() -> assertThat(textFlow).hasColoredText("foobar <LALALA>quux</LALALA>"))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("Expected: TextFlow has colored text \"foobar <LALALA>quux</LALALA>\"\n     " +
-                        "but: was TextFlow with colored text: \"foobar <RED>quux</RED>\""
-                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                .hasMessage("Expected: TextFlow has colored text \"foobar <LALALA>quux</LALALA>\"" + System.lineSeparator() + "     " +
+                        "but: was TextFlow with colored text: \"foobar <RED>quux</RED>\"");
     }
 
     @Test
@@ -114,20 +110,18 @@ public class TextFlowAssertTest extends FxRobot {
     public void doesNotHaveColoredText_fails() {
         assertThatThrownBy(() -> assertThat(textFlow).doesNotHaveColoredText("foobar <RED>quux</RED>"))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("Expected: TextFlow has colored text \"foobar <RED>quux</RED>\" to be false\n     " +
-                        "but: was TextFlow with colored text: \"foobar <RED>quux</RED>\""
-                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                .hasMessage("Expected: TextFlow has colored text \"foobar <RED>quux</RED>\" to be false" + System.lineSeparator() + "     " +
+                        "but: was TextFlow with colored text: \"foobar <RED>quux</RED>\"");
     }
 
     @Test
     public void hasExactlyColoredText_fails() {
         assertThatThrownBy(() -> assertThat(exactTextFlow).hasExactlyColoredText("<LIMEGREEN>exact</LIMEGREEN>"))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("Expected: TextFlow has exactly colored text \"<LIMEGREEN>exact</LIMEGREEN>\"\n     " +
+                .hasMessage("Expected: TextFlow has exactly colored text \"<LIMEGREEN>exact</LIMEGREEN>\"" + System.lineSeparator() + "     " +
                         "but: was impossible to exactly match TextFlow containing " +
-                        "colored text: \"exact\" which has color: \"#33cd32\".\n" +
-                        "This is not a named color. The closest named color is: \"LIMEGREEN\".\n" +
-                        "See: https://docs.oracle.com/javase/9/docs/api/javafx/scene/doc-files/cssref.html#typecolor"
-                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                        "colored text: \"exact\" which has color: \"#33cd32\"." + System.lineSeparator() +
+                        "This is not a named color. The closest named color is: \"LIMEGREEN\"." + System.lineSeparator() +
+                        "See: https://docs.oracle.com/javase/9/docs/api/javafx/scene/doc-files/cssref.html#typecolor");
     }
 }

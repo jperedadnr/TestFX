@@ -93,8 +93,7 @@ public class ButtonAssertTest extends FxRobot {
     public void isDefaultButton_fails() {
         assertThatThrownBy(() -> assertThat(button).isDefaultButton())
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessageStartingWith("Expected: Button is default button\n"
-                        .replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                .hasMessageStartingWith("Expected: Button is default button" + System.lineSeparator());
     }
 
     @Test
@@ -110,7 +109,6 @@ public class ButtonAssertTest extends FxRobot {
         // then:
         assertThatThrownBy(() -> assertThat(button).isNotDefaultButton())
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessageStartingWith("Expected: Button is default button to be false\n"
-                        .replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                .hasMessageStartingWith("Expected: Button is default button to be false" + System.lineSeparator());
     }
 }

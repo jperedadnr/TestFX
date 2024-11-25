@@ -98,8 +98,7 @@ public class NodeMatchersTest extends TestCaseBase {
         // then:
         assertThatThrownBy(() -> assertThat(textField, NodeMatchers.isFocused()))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessageStartingWith("\nExpected: Node has focus\n"
-                        .replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                .hasMessageStartingWith(System.lineSeparator() + "Expected: Node has focus" + System.lineSeparator());
     }
 
     @Test
@@ -133,8 +132,7 @@ public class NodeMatchersTest extends TestCaseBase {
         // then:
         assertThatThrownBy(() -> assertThat(textField, NodeMatchers.isNotFocused()))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessageStartingWith("\nExpected: Node does not have focus\n"
-                        .replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                .hasMessageStartingWith(System.lineSeparator() + "Expected: Node does not have focus" + System.lineSeparator());
     }
 
     @Test
@@ -174,8 +172,7 @@ public class NodeMatchersTest extends TestCaseBase {
         // then:
         assertThatThrownBy(() -> assertThat(parent, NodeMatchers.hasChild(".button")))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessageStartingWith("\nExpected: Node has child \".button\"\n"
-                        .replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                .hasMessageStartingWith(System.lineSeparator() + "Expected: Node has child \".button\"" + System.lineSeparator());
     }
 
     @Test
@@ -196,8 +193,7 @@ public class NodeMatchersTest extends TestCaseBase {
         // then:
         assertThatThrownBy(() -> assertThat(parent, NodeMatchers.hasChildren(2, ".button")))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessageStartingWith("\nExpected: Node has 2 children \".button\"\n"
-                        .replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                .hasMessageStartingWith(System.lineSeparator() + "Expected: Node has 2 children \".button\"" + System.lineSeparator());
     }
 
 }

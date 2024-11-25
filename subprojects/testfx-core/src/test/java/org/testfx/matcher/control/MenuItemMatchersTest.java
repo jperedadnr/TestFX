@@ -55,9 +55,8 @@ public class MenuItemMatchersTest extends FxRobot {
     public void hasText_fails() {
         assertThatThrownBy(() -> assertThat(barMenuItem, MenuItemMatchers.hasText("foo")))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("\nExpected: MenuItem has text \"foo\"\n     " +
-                        "but: was \"bar\""
-                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                .hasMessage(System.lineSeparator() + "Expected: MenuItem has text \"foo\"" + System.lineSeparator() + "     " +
+                        "but: was \"bar\"");
     }
 
     @Test
@@ -69,8 +68,7 @@ public class MenuItemMatchersTest extends FxRobot {
     public void hasText_matcher_fails() {
         assertThatThrownBy(() -> assertThat(barMenuItem, MenuItemMatchers.hasText(endsWith("oo"))))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("\nExpected: MenuItem has a string ending with \"oo\"\n     " +
-                        "but: was \"bar\""
-                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                .hasMessage(System.lineSeparator() + "Expected: MenuItem has a string ending with \"oo\"" + System.lineSeparator() + "     " +
+                        "but: was \"bar\"");
     }
 }

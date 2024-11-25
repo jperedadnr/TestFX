@@ -65,9 +65,8 @@ public class ComboBoxMatchersTest extends FxRobot {
     public void hasItems_fails() {
         assertThatThrownBy(() -> assertThat(comboBox, ComboBoxMatchers.hasItems(3)))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("\nExpected: ComboBox has exactly 3 items\n     " +
-                        "but: was 4"
-                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                .hasMessage(System.lineSeparator() + "Expected: ComboBox has exactly 3 items" + System.lineSeparator() + "     " +
+                        "but: was 4");
     }
 
     @Test
@@ -88,9 +87,8 @@ public class ComboBoxMatchersTest extends FxRobot {
     public void hasSelectedItem_fails() {
         assertThatThrownBy(() -> assertThat(comboBox, ComboBoxMatchers.hasSelectedItem("bob")))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("\nExpected: ComboBox has selection \"bob\"\n     " +
-                        "but: was \"alice\""
-                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                .hasMessage(System.lineSeparator() + "Expected: ComboBox has selection \"bob\"" + System.lineSeparator() + "     " +
+                        "but: was \"alice\"");
     }
 
     @Test
@@ -107,9 +105,8 @@ public class ComboBoxMatchersTest extends FxRobot {
     public void containsItems_fails() {
         assertThatThrownBy(() -> assertThat(comboBox, ComboBoxMatchers.containsItems("alice", "bob", "eric")))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("\nExpected: ComboBox contains items [alice, bob, eric]\n" +
-                        "     but: was [alice, bob, carol, dave]"
-                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                .hasMessage(System.lineSeparator() + "Expected: ComboBox contains items [alice, bob, eric]" + System.lineSeparator() +
+                        "     but: was [alice, bob, carol, dave]");
     }
 
     @Test
@@ -125,9 +122,8 @@ public class ComboBoxMatchersTest extends FxRobot {
         // missing "dave", so should fail
         assertThatThrownBy(() -> assertThat(comboBox, ComboBoxMatchers.containsExactlyItems("alice", "bob", "carol")))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("\nExpected: ComboBox contains exactly items [alice, bob, carol]\n" +
-                        "     but: was [alice, bob, carol, dave]"
-                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                .hasMessage(System.lineSeparator() + "Expected: ComboBox contains exactly items [alice, bob, carol]" + System.lineSeparator() +
+                        "     but: was [alice, bob, carol, dave]");
     }
 
     @Test
@@ -142,9 +138,8 @@ public class ComboBoxMatchersTest extends FxRobot {
     public void containsItemsInOrder_fails() {
         assertThatThrownBy(() -> assertThat(comboBox, ComboBoxMatchers.containsItemsInOrder("alice", "carol", "bob")))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("\nExpected: ComboBox contains items in order [alice, carol, bob]\n" +
-                        "     but: was [alice, bob, carol, dave]"
-                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                .hasMessage(System.lineSeparator() + "Expected: ComboBox contains items in order [alice, carol, bob]" + System.lineSeparator() +
+                        "     but: was [alice, bob, carol, dave]");
     }
 
     @Test
@@ -159,9 +154,8 @@ public class ComboBoxMatchersTest extends FxRobot {
         assertThatThrownBy(() -> assertThat(comboBox,
                 ComboBoxMatchers.containsExactlyItemsInOrder("bob", "alice", "dave", "carol")))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("\nExpected: ComboBox contains exactly items in order [bob, alice, dave, carol]\n" +
-                        "     but: was [alice, bob, carol, dave]"
-                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                .hasMessage(System.lineSeparator() + "Expected: ComboBox contains exactly items in order [bob, alice, dave, carol]" + System.lineSeparator() +
+                        "     but: was [alice, bob, carol, dave]");
     }
 
 }

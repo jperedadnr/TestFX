@@ -67,9 +67,8 @@ public class GeneralMatchersTest {
         // then:
         assertThatThrownBy(() -> assertThat(nullNode, notNullNodeMatcher))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("\nExpected: Node is not null\n" +
-                        "     but: was null"
-                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                .hasMessage(System.lineSeparator() + "Expected: Node is not null" + System.lineSeparator() +
+                        "     but: was null");
     }
 
     @Test
@@ -82,9 +81,8 @@ public class GeneralMatchersTest {
         // then:
         assertThatThrownBy(() -> assertThat(notMatchingNode, hasChildrenParentMatcher))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("\nExpected: Parent has children\n" +
-                        "     but: was <" + notMatchingNode.toString() + ">"
-                        .replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                .hasMessage(System.lineSeparator() + "Expected: Parent has children" + System.lineSeparator() +
+                        "     but: was <" + notMatchingNode.toString() + ">");
     }
 
     @Test
@@ -97,9 +95,8 @@ public class GeneralMatchersTest {
         // expect:
         assertThatThrownBy(() -> assertThat(nullNode, hasChildrenParentMatcher))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("\nExpected: Parent has children\n" +
-                        "     but: was null"
-                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                .hasMessage(System.lineSeparator() + "Expected: Parent has children" + System.lineSeparator() +
+                        "     but: was null");
     }
 
     @Test
@@ -113,9 +110,8 @@ public class GeneralMatchersTest {
         // TODO: Hint expected type on AssertError explicitly.
         assertThatThrownBy(() -> assertThat(notParentNode, hasChildrenParentMatcher))
                 .isExactlyInstanceOf(AssertionError.class)
-                .hasMessage("\nExpected: Parent has children\n" +
-                        "     but: was <" + notParentNode.toString() + ">"
-                        .replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                .hasMessage(System.lineSeparator() + "Expected: Parent has children" + System.lineSeparator() +
+                        "     but: was <" + notParentNode.toString() + ">");
     }
 
 }
