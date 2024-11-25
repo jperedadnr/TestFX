@@ -54,7 +54,8 @@ public class ParentAssertTest extends FxRobot {
         assertThatThrownBy(() -> assertThat(parent).hasAnyChild())
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("Expected: Parent has at least one child\n     " +
-                        "but: was empty (contained no children)".replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                        "but: was empty (contained no children)"
+                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
     @Test
@@ -75,7 +76,8 @@ public class ParentAssertTest extends FxRobot {
         assertThatThrownBy(() -> assertThat(stackPane).hasNoChildren())
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("Expected: Parent has at least one child to be false\n     " +
-                        "but: was [Button] (which has 1 child)".replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                        "but: was [Button] (which has 1 child)"
+                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
     @Test
@@ -97,7 +99,8 @@ public class ParentAssertTest extends FxRobot {
         assertThatThrownBy(() -> assertThat(stackPane).hasExactlyNumChildren(3))
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("Expected: Parent has exactly 3 children\n     " +
-                        "but: was [Label, Button] (which has 2 children)".replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                        "but: was [Label, Button] (which has 2 children)"
+                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
     @Test
@@ -120,6 +123,7 @@ public class ParentAssertTest extends FxRobot {
         assertThatThrownBy(() -> assertThat(stackPane).doesNotHaveExactlyNumChildren(2))
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("Expected: Parent has exactly 2 children to be false\n     " +
-                        "but: was [Label, Button] (which has 2 children)".replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                        "but: was [Label, Button] (which has 2 children)"
+                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 }

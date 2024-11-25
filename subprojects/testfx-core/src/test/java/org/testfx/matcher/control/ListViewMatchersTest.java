@@ -68,7 +68,8 @@ public class ListViewMatchersTest extends FxRobot {
         assertThatThrownBy(() -> assertThat(listView, ListViewMatchers.hasListCell(null)))
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("\nExpected: ListView has list cell \"null\"\n     " +
-                        "but: was [alice, bob, carol, dave]".replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                        "but: was [alice, bob, carol, dave]"
+                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
     @Test
@@ -76,7 +77,8 @@ public class ListViewMatchersTest extends FxRobot {
         assertThatThrownBy(() -> assertThat(listView, ListViewMatchers.hasListCell("foobar")))
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("\nExpected: ListView has list cell \"foobar\"\n     " +
-                        "but: was [alice, bob, carol, dave]".replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                        "but: was [alice, bob, carol, dave]"
+                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
     @Test
@@ -89,7 +91,8 @@ public class ListViewMatchersTest extends FxRobot {
         assertThatThrownBy(() -> assertThat(listView, ListViewMatchers.hasItems(0)))
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("\nExpected: ListView has exactly 0 items\n     " +
-                        "but: was 4".replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                        "but: was 4"
+                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
     @Test
@@ -107,7 +110,8 @@ public class ListViewMatchersTest extends FxRobot {
         assertThatThrownBy(() -> assertThat(listView, ListViewMatchers.isEmpty()))
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("\nExpected: ListView is empty (contains no items)\n     " +
-                        "but: was contains 4 items".replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                        "but: was contains 4 items"
+                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
     @Test
@@ -120,7 +124,8 @@ public class ListViewMatchersTest extends FxRobot {
         assertThatThrownBy(() -> assertThat(listView, ListViewMatchers.hasPlaceholder(new Label("foobar"))))
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("\nExpected: ListView has labeled placeholder containing text: \"foobar\"\n     " +
-                        "but: was labeled placeholder containing text: \"Empty!\"".replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                        "but: was labeled placeholder containing text: \"Empty!\""
+                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
     @Test
@@ -133,7 +138,8 @@ public class ListViewMatchersTest extends FxRobot {
         assertThatThrownBy(() -> assertThat(listView, ListViewMatchers.hasVisiblePlaceholder(new Label("foobar"))))
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("\nExpected: ListView has visible labeled placeholder containing text: \"foobar\"\n" +
-                        "     but: was visible labeled placeholder containing text: \"Empty!\"".replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                        "     but: was visible labeled placeholder containing text: \"Empty!\""
+                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
     @Test
@@ -146,7 +152,8 @@ public class ListViewMatchersTest extends FxRobot {
         assertThatThrownBy(() -> assertThat(listView, ListViewMatchers.hasVisiblePlaceholder(new Label("Empty!"))))
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("\nExpected: ListView has visible labeled placeholder containing text: \"Empty!\"\n" +
-                        "     but: was invisible labeled placeholder containing text: \"Empty!\"".replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                        "     but: was invisible labeled placeholder containing text: \"Empty!\""
+                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
     @Test

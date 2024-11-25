@@ -75,7 +75,8 @@ public class TextFlowMatchersTest extends FxRobot {
         assertThatThrownBy(() -> assertThat(textFlow, TextFlowMatchers.hasText("foobar baaz")))
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("\nExpected: TextFlow has text \"foobar baaz\"\n     " +
-                        "but: was TextFlow containing text: \"foobar quux\"".replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                        "but: was TextFlow containing text: \"foobar quux\""
+                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
     @Test
@@ -88,7 +89,8 @@ public class TextFlowMatchersTest extends FxRobot {
         assertThatThrownBy(() -> assertThat(textFlow, TextFlowMatchers.hasColoredText("foobar <BLUE>quux</BLUE>")))
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("\nExpected: TextFlow has colored text \"foobar <BLUE>quux</BLUE>\"\n     " +
-                        "but: was TextFlow with colored text: \"foobar <RED>quux</RED>\"".replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                        "but: was TextFlow with colored text: \"foobar <RED>quux</RED>\""
+                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
     @Test
@@ -96,7 +98,8 @@ public class TextFlowMatchersTest extends FxRobot {
         assertThatThrownBy(() -> assertThat(textFlow, TextFlowMatchers.hasColoredText("foobar <LALALA>quux</LALALA>")))
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("\nExpected: TextFlow has colored text \"foobar <LALALA>quux</LALALA>\"\n     " +
-                        "but: was TextFlow with colored text: \"foobar <RED>quux</RED>\"".replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                        "but: was TextFlow with colored text: \"foobar <RED>quux</RED>\""
+                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
     @Test
@@ -108,7 +111,8 @@ public class TextFlowMatchersTest extends FxRobot {
                         "but: was impossible to exactly match TextFlow containing " +
                         "colored text: \"exact\" which has color: \"#33cd32\".\n" +
                         "This is not a named color. The closest named color is: \"LIMEGREEN\".\n" +
-                        "See: https://docs.oracle.com/javase/9/docs/api/javafx/scene/doc-files/cssref.html#typecolor".replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                        "See: https://docs.oracle.com/javase/9/docs/api/javafx/scene/doc-files/cssref.html#typecolor"
+                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
     /**
@@ -135,6 +139,7 @@ public class TextFlowMatchersTest extends FxRobot {
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("\nExpected: TextFlow has exactly colored text \"foobar <BLACK>quux</BLACK>\"\n     " +
                         "but: was exact color matching for subclasses of javafx.scene.paint.Paint besides " +
-                        "javafx.scene.paint.Color is not (yet) supported.".replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                        "javafx.scene.paint.Color is not (yet) supported."
+                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 }

@@ -62,7 +62,8 @@ public class TextInputControlMatchersTest extends FxRobot {
         assertThatThrownBy(() -> assertThat(quuxTextField, TextInputControlMatchers.hasText("foobar")))
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("\nExpected: TextInputControl has text \"foobar\"\n     " +
-                        "but: was TextField with text: \"quux\"".replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                        "but: was TextField with text: \"quux\""
+                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
     @Test
@@ -75,7 +76,8 @@ public class TextInputControlMatchersTest extends FxRobot {
         assertThatThrownBy(() -> assertThat(quuxTextField, TextInputControlMatchers.hasText(endsWith("bar"))))
                 .isExactlyInstanceOf(AssertionError.class)
                 .hasMessage("\nExpected: TextInputControl has a string ending with \"bar\"\n     " +
-                        "but: was TextField with text: \"quux\"".replaceAll("\\n|\\r\\n", System.lineSeparator()));
+                        "but: was TextField with text: \"quux\""
+                                .replaceAll("\\n|\\r\\n", System.lineSeparator()));
     }
 
 }
